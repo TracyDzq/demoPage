@@ -4,21 +4,104 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>demoPage</title>
-
-  <link rel="stylesheet" href="css/public-pc.css">
-  <link rel="stylesheet" href="css/swiper.min.css">
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/swiper.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>民泰证券</title>
+  <link rel="stylesheet" href="./layui/css/layui.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./layui/layui.js"></script>
+  <script src="./js/index.js"></script>
 </head>
 
-<body>
-  <header class="header">
-    <p>我是头部</p>
-  </header>
-    <div class="body">
-        这是body的内容
+<body class="main-site">
+  <div class="layui-header header">
+    <div class="header-wrapper">
+      <div class="layui-main">
+        <a class="logo pull-left" href="/">
+          <img src="./img/logo.png" alt="layui">
+        </a>
+        <div class="pc-nav pull-right">
+          <ul class="layui-nav">
+            <li class="layui-nav-item layui-this"><a href="./index.html">首页</a></li>
+            <li class="layui-nav-item"><a href="./about.html">关于我们</a></li>
+            <li class="layui-nav-item"><a href="./product.html">产品服务</a></li>
+            <li class="layui-nav-item"><a href="./deal.html">交易平台</a></li>
+            <li class="layui-nav-item"><a href="./customer.html">客户服务</a></li>
+            <li class="layui-nav-item"><a href="./contact.html">联系我们</a></li>
+          </ul>
+          <span class="change-lan"><a href="">简</a> <span>|</span> <a href="">繁</a></span>
+
+        </div>
+        <div class="mobile-nav pull-right" id="mobile-nav">
+          <a class="mobile-menu" href="javascript:;">
+            <img src="./img/phone-icon-menu.png" alt="">
+          </a>
+        </div>
+      </div>
     </div>
+    <ul class="pop-nav" id="pop-nav">
+      <li class="layui-nav-item layui-this"><a href="./index.html">首页</a></li>
+      <li class="layui-nav-item"><a href="./about.html">关于我们</a></li>
+      <li class="layui-nav-item"><a href="./product.html">产品服务</a></li>
+      <li class="layui-nav-item"><a href="./deal.html">交易平台</a></li>
+      <li class="layui-nav-item"><a href="./customer.html">客户服务</a></li>
+      <li class="layui-nav-item"><a href="./contact.html">联系我们</a></li>
+    </ul>
+  </div>
+
+  <script>
+    layui.use('element', function () {
+      var element = layui.element;
+      element.on('nav(nav1)', function (elem) {
+        console.log(elem); //得到当前点击的DOM对象
+        elem.addClass('layui-this')
+      });
+    });
+  </script>
+<div class="body-main index-main">
+    <div class="layui-carousel" id="banner">
+        <div carousel-item="">
+            <div class="item-fir">
+                <div class="item-title layui-anim layui-anim-up">全球一站式证券交易平台</div>
+                <div class="item-intro layui-anim layui-anim-up">极速同步全球行情&nbsp;&nbsp;一网打尽美股港股</div>
+            </div>
+            <div class="item-sec">
+                <div class="item-title layui-anim layui-anim-up">随身境外股票投资专家</div>
+                <div class="item-intro layui-anim layui-anim-up">移动交易 一键投资 超低佣金 安全稳定</div>
+            </div>
+        </div>
+    </div>
+    <div class="layui-main">
+        <div class="layui-row index-item-box">
+            <div class="layui-col-md4 index-item-list">
+                <a href="" class="index-item-wrap">
+                    <img src="./img/index-icon1.png" alt="">
+                    <p class="title">证券交易</p>
+                    <p class="info">移动交易 一键投资</p>
+                    <p class="info"><span class="light">超低</span>佣金 安全稳定</p>
+                    <button class="layui-btn layui-btn-lg layui-btn-warm">进入下载</button>
+                </a>
+            </div>
+            <div class="layui-col-md4   index-item-list">
+                <a href="" class="index-item-wrap">
+                    <img src="./img/index-icon2.png" alt="">
+                    <p class="title">表格文件</p>
+                    <p class="info">开户表格 在线下载</p>
+                    <p class="info"><span class="light">便捷</span>填写 E-mail发送</p>
+                    <button class="layui-btn layui-btn-lg layui-btn-warm">进入下载</button>
+                </a>
+            </div>
+            <div class="layui-col-md4   index-item-list">
+                <a href="./file/1_Account_Opening_Form_Cash.pdf" target="_blank" class="index-item-wrap">
+                    <img src="./img/index-icon3.png" alt="">
+                    <p class="title">预约开户</p>
+                    <p class="info">在线预约 极速开户</p>
+                    <p class="info"><span class="light">3分钟</span> 搞定开户流程</p>
+                    <button class="layui-btn layui-btn-lg layui-btn-warm">立即申请</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
 <footer class="footer">
     <p>我是底部</p>
 </footer>
@@ -27,5 +110,17 @@
 </body>
 </html>
 <script>
+    layui.use(['carousel', 'form'], function () {
+        var carousel = layui.carousel
+            , form = layui.form;
 
+
+        //改变下时间间隔、动画类型、高度
+        carousel.render({
+            elem: '#banner'
+            , interval: 3000
+            , anim: 'fade'
+            , width: '100%'
+        });
+    })
 </script>

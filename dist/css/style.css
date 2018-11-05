@@ -1,17 +1,191 @@
-.header {
-  background-color: #f99;
-  line-height: 50px;
-  text-align: center;
-  font-size: 18px;
-  color: #fff;
+@charset "UTF-8";
+/* ===========
+	宸ュ叿鏍峰紡
+   =========== */
+html,
+body {
+  font-size: 100% !important;
 }
 
-.body {
-  background-color: #9f9;
-  line-height: 100px;
-  text-align: center;
-  font-size: 18px;
+.pull-right {
+  float: right !important;
+}
+
+.pull-left {
+  float: left !important;
+}
+
+.header {
+  height: 80px;
+  position: fixed;
+  width: 100%;
+  background-color: #fff;
+}
+.header .logo {
+  margin-top: 10px;
+}
+.header .logo img {
+  height: 60px;
+}
+.header .header-wrapper {
+  padding: 0 20px;
+  height: 100%;
+}
+.header .layui-main {
+  width: 100%;
+  height: 100%;
+  max-width: 1200px;
+}
+.header .pc-nav {
+  height: 80px;
+}
+.header .pc-nav .layui-nav .layui-this:after,
+.header .pc-nav .layui-nav-bar,
+.header .pc-nav .layui-nav-tree .layui-nav-itemed:after {
+  background-color: #003764;
+}
+.header .pc-nav .layui-nav {
+  display: inline-block;
+  background-color: #fff;
+  border-radius: 0;
+  vertical-align: middle;
+}
+.header .pc-nav .layui-nav .layui-nav-item a {
+  color: #888;
+  line-height: 80px;
+}
+.header .pc-nav .layui-nav .layui-nav-bar {
+  background-color: #003764;
+}
+.header .pc-nav .change-lan {
+  vertical-align: middle;
+  line-height: 80px;
+}
+.header .pc-nav .change-lan a {
+  color: #888;
+}
+.header .pc-nav .change-lan span {
+  color: #888;
+}
+.header .mobile-nav {
+  display: none;
+  margin-top: 10px;
+}
+.header .mobile-nav .mobile-menu {
+  height: 28px;
+}
+.header .mobile-nav .mobile-menu img {
+  height: 28px;
+}
+@media only screen and (min-width: 750px) {
+  .header ul#pop-nav {
+    display: none !important;
+  }
+}
+
+.body-main {
+  padding-top: 80px;
+}
+
+@media only screen and (max-width: 965px) {
+  .header {
+    height: 48px;
+  }
+  .header .logo {
+    margin-top: 5px;
+  }
+  .header .logo img {
+    height: 38px;
+  }
+  .header .header-wrapper {
+    padding: 0 15px;
+  }
+  .header .pc-nav {
+    display: none;
+  }
+  .header .mobile-nav {
+    display: block;
+  }
+  .header ul#pop-nav {
+    display: none;
+  }
+
+  .body-main {
+    padding-top: 48px;
+  }
+}
+.index-main #banner.layui-carousel {
+  width: 100% !important;
+  height: 30vw !important;
+}
+.index-main #banner .item-fir {
+  background: url("../img/banner.jpg") center no-repeat;
+  background-size: 100% 100%;
+}
+.index-main #banner .item-sec {
+  background: url("../img/banner2.jpg") center no-repeat;
+  background-size: 100% 100%;
+}
+.index-main #banner .item-title {
+  width: 100%;
+  margin: 10% auto 1%;
   color: #fff;
+  font-size: 4em;
+  text-align: center;
+}
+.index-main #banner .item-intro {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 2em;
+}
+@media only screen and (max-width: 965px) {
+  .index-main #banner.layui-carousel {
+    height: 50vw !important;
+  }
+  .index-main #banner .item-title {
+    font-size: 1.5em;
+  }
+  .index-main #banner .item-intro {
+    font-size: 0.8em;
+  }
+}
+.index-main .layui-main {
+  width: 100%;
+  max-width: 1200px;
+}
+.index-main .index-item-box {
+  margin-top: 20px;
+}
+.index-main .index-item-box .index-item-list {
+  text-align: center;
+}
+.index-main .index-item-box .index-item-list .index-item-wrap {
+  width: 60%;
+  height: 80%;
+  margin: 10% auto;
+  display: block;
+  padding: 20px;
+}
+.index-main .index-item-box .index-item-list .index-item-wrap:hover {
+  box-shadow: 0 0 5px 2px #e1e1e1;
+}
+.index-main .index-item-box .index-item-list .index-item-wrap .title {
+  color: #333;
+  font-size: 2em;
+  font-weight: 700;
+  margin: 15px auto;
+}
+.index-main .index-item-box .index-item-list .index-item-wrap .info {
+  color: #999;
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+.index-main .index-item-box .index-item-list .index-item-wrap .info .light {
+  color: #bd262d;
+}
+.index-main .index-item-box .index-item-list .index-item-wrap .layui-btn {
+  margin-top: 8px;
 }
 
 .footer {
