@@ -6,9 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>民泰证券</title>
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_906290_hze55zaymv.css">
   <link rel="stylesheet" href="./layui/css/layui.css">
+  <link rel="stylesheet" href="./css/swiper.min.css">
+  <link rel="stylesheet" href="./css/animate.min.css">
   <link rel="stylesheet" href="./css/style.css">
   <script src="./layui/layui.js"></script>
+  <script src="./js/swiper.min.js"></script>
+  <script src="./js/swiper.animate.min.js"></script>
   <script src="./js/index.js"></script>
 </head>
 
@@ -58,17 +63,24 @@
     });
   </script>
 <div class="body-main index-main">
-    <div class="layui-carousel" id="banner">
-        <div carousel-item="">
-            <div class="item-fir">
-                <div class="item-title layui-anim layui-anim-up">全球一站式证券交易平台</div>
-                <div class="item-intro layui-anim layui-anim-up">极速同步全球行情&nbsp;&nbsp;一网打尽美股港股</div>
+
+    <div class="swiper-container" id='banner'>
+        <div class="swiper-wrapper">
+            <div class="swiper-slide item-fir">
+                <div class="item-title ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.5s"
+                    swiper-animate-delay="0.3s">全球一站式证券交易平台</div>
+                <div class="item-intro ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s"
+                    swiper-animate-delay="0.3s">极速同步全球行情&nbsp;&nbsp;一网打尽美股港股</div>
             </div>
-            <div class="item-sec">
-                <div class="item-title layui-anim layui-anim-up">随身境外股票投资专家</div>
-                <div class="item-intro layui-anim layui-anim-up">移动交易 一键投资 超低佣金 安全稳定</div>
+            <div class="swiper-slide item-sec">
+                <div class="item-title ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.5s"
+                    swiper-animate-delay="0.3s">随身境外股票投资专家</div>
+                <div class="item-intro ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s"
+                    swiper-animate-delay="0.3s">移动交易 一键投资 超低佣金 安全稳定</div>
             </div>
         </div>
+        <div class="swiper-button-prev swiper-button-white"></div> <!-- 白色 -->
+        <div class="swiper-button-next swiper-button-white"></div> <!-- 黑色 -->
     </div>
     <div class="layui-main">
         <div class="layui-row index-item-box">
@@ -103,24 +115,32 @@
     </div>
 </div>
 <footer class="footer">
-    <p>我是底部</p>
+    <div class="layui-main">
+        <div class="copyright">
+            <span>Copyright © 2017-2018 <a href="">Mintai Financial Group 民泰金融</a> 版权所有</span>
+        </div>
+    </div>
 </footer>
 
 
 </body>
+
 </html>
 <script>
-    layui.use(['carousel', 'form'], function () {
-        var carousel = layui.carousel
-            , form = layui.form;
-
-
-        //改变下时间间隔、动画类型、高度
-        carousel.render({
-            elem: '#banner'
-            , interval: 3000
-            , anim: 'fade'
-            , width: '100%'
-        });
+    var mySwiper = new Swiper('#banner', {
+        effect: 'fade',
+        autoplay: 4000,//可选选项，自动滑动
+        loop: true,
+        prevButton: '.swiper-button-prev',
+        nextButton: '.swiper-button-next',
+        onInit: function (swiper) {
+            swiperAnimateCache(swiper);
+            swiperAnimate(swiper);
+        },
+        onSlideChangeEnd: function (swiper) {
+            swiperAnimate(swiper);
+        }
     })
+
+
 </script>

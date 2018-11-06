@@ -13,6 +13,14 @@ body {
 .pull-left {
   float: left !important;
 }
+.clear:after {
+  content: '';
+  clear: both;
+  display: block;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
 
 .header {
   height: 80px;
@@ -39,7 +47,7 @@ body {
     .layui-nav .layui-this:after,
     .layui-nav-bar,
     .layui-nav-tree .layui-nav-itemed:after {
-      background-color: #003764;
+      background-color: #bd262d;
     }
     .layui-nav {
       display: inline-block;
@@ -51,7 +59,7 @@ body {
         line-height: 80px;
       }
       .layui-nav-bar {
-        background-color: #003764;
+        background-color: #bd262d;
       }
     }
     .change-lan {
@@ -85,8 +93,24 @@ body {
 }
 .body-main {
   padding-top: 80px;
+  .layui-main {
+    width: 100%;
+    max-width: 1200px;
+    .main-wrapper {
+      padding: 0 5px;
+    }
+  }
 }
-@media only screen and (max-width: 965px) {
+.site-banner {
+  width: 100%;
+  margin: 10px auto;
+  img {
+    width: 100%;
+    display: block;
+    border-radius: 4px;
+  }
+}
+@media only screen and (max-width: 980px) {
   .header {
     height: 48px;
     .logo {
@@ -117,9 +141,17 @@ body {
 
 .index-main {
   #banner {
-    &.layui-carousel {
+    &.swiper-container {
       width: 100% !important;
       height: 30vw !important;
+    }
+    .swiper-button-white {
+      display: none;
+    }
+    &:hover {
+      .swiper-button-white {
+        display: block;
+      }
     }
     .item-fir {
       background: url('../img/banner.jpg') center no-repeat;
@@ -131,19 +163,19 @@ body {
     }
     .item-title {
       width: 100%;
-      margin: 10% auto 1%;
+      margin: 12% auto 1%;
       color: #fff;
-      font-size: 4em;
+      font-size: 36px;
       text-align: center;
     }
     .item-intro {
       width: 100%;
       text-align: center;
       color: #fff;
-      font-size: 2em;
+      font-size: 20px;
     }
-    @media only screen and (max-width: 965px) {
-      &.layui-carousel {
+    @media only screen and (max-width: 980px) {
+      &.swiper-container {
         height: 50vw !important;
       }
       .item-title {
@@ -154,26 +186,30 @@ body {
       }
     }
   }
-  .layui-main {
-    width: 100%;
-    max-width: 1200px;
-  }
+
   .index-item-box {
     margin-top: 20px;
     .index-item-list {
       text-align: center;
       .index-item-wrap {
         width: 60%;
-        height: 80%;
+        height: 100%;
         margin: 10% auto;
         display: block;
+        border: 1px solid #ddd;
+        box-shadow: 0 0 2px 0px #e1e1e1;
+        transition: transform 0.3s;
         padding: 20px;
         &:hover {
           box-shadow: 0 0 5px 2px #e1e1e1;
+          transform: translate(0, -5px);
+        }
+        img {
+          width: 40%;
         }
         .title {
           color: #333;
-          font-size: 2em;
+          font-size: 1.8em;
           font-weight: 700;
           margin: 15px auto;
         }
@@ -193,10 +229,70 @@ body {
   }
 }
 
+//关于我们
+.about-main {
+  .about-item {
+    margin: 20px auto 30px;
+    .title-box {
+      margin-bottom: 30px;
+    }
+    .title {
+      font-size: 18px;
+      line-height: 28px;
+      background-color: #fff;
+      padding-right: 10px;
+      z-index: 5;
+      float: left;
+      position: relative;
+    }
+    .title-line {
+      border-bottom: 1px solid #f0f0f0;
+      width: 100%;
+      float: left;
+      height: 1px;
+      display: inline-block;
+      margin-top: -14px;
+    }
+    .text-area {
+      color: #888;
+      line-height: 24px;
+      font-size: 14px;
+      .text-lg {
+        float: left;
+        color: #bd262d;
+        font-size: 50px;
+        line-height: 50px;
+        padding-top: 4px;
+        padding-right: 10px;
+        margin-top: -2px;
+      }
+      p {
+        margin-bottom: 15px;
+      }
+    }
+  }
+}
+
+/*底部*/
 .footer {
-  background-color: #99f;
-  line-height: 50px;
-  text-align: center;
-  font-size: 18px;
-  color: #fff;
+  margin-top: 30px;
+  background-color: #26190e;
+  height: 60px;
+  font-size: 14px;
+  .layui-main {
+    width: 100%;
+    max-width: 1200px;
+  }
+  .copyright {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999999;
+    a {
+      color: #999999;
+    }
+  }
 }

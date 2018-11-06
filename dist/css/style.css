@@ -15,6 +15,15 @@ body {
   float: left !important;
 }
 
+.clear:after {
+  content: '';
+  clear: both;
+  display: block;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
 .header {
   height: 80px;
   position: fixed;
@@ -42,7 +51,7 @@ body {
 .header .pc-nav .layui-nav .layui-this:after,
 .header .pc-nav .layui-nav-bar,
 .header .pc-nav .layui-nav-tree .layui-nav-itemed:after {
-  background-color: #003764;
+  background-color: #bd262d;
 }
 .header .pc-nav .layui-nav {
   display: inline-block;
@@ -55,7 +64,7 @@ body {
   line-height: 80px;
 }
 .header .pc-nav .layui-nav .layui-nav-bar {
-  background-color: #003764;
+  background-color: #bd262d;
 }
 .header .pc-nav .change-lan {
   vertical-align: middle;
@@ -86,8 +95,25 @@ body {
 .body-main {
   padding-top: 80px;
 }
+.body-main .layui-main {
+  width: 100%;
+  max-width: 1200px;
+}
+.body-main .layui-main .main-wrapper {
+  padding: 0 5px;
+}
 
-@media only screen and (max-width: 965px) {
+.site-banner {
+  width: 100%;
+  margin: 10px auto;
+}
+.site-banner img {
+  width: 100%;
+  display: block;
+  border-radius: 4px;
+}
+
+@media only screen and (max-width: 980px) {
   .header {
     height: 48px;
   }
@@ -114,9 +140,15 @@ body {
     padding-top: 48px;
   }
 }
-.index-main #banner.layui-carousel {
+.index-main #banner.swiper-container {
   width: 100% !important;
   height: 30vw !important;
+}
+.index-main #banner .swiper-button-white {
+  display: none;
+}
+.index-main #banner:hover .swiper-button-white {
+  display: block;
 }
 .index-main #banner .item-fir {
   background: url("../img/banner.jpg") center no-repeat;
@@ -128,19 +160,19 @@ body {
 }
 .index-main #banner .item-title {
   width: 100%;
-  margin: 10% auto 1%;
+  margin: 12% auto 1%;
   color: #fff;
-  font-size: 4em;
+  font-size: 36px;
   text-align: center;
 }
 .index-main #banner .item-intro {
   width: 100%;
   text-align: center;
   color: #fff;
-  font-size: 2em;
+  font-size: 20px;
 }
-@media only screen and (max-width: 965px) {
-  .index-main #banner.layui-carousel {
+@media only screen and (max-width: 980px) {
+  .index-main #banner.swiper-container {
     height: 50vw !important;
   }
   .index-main #banner .item-title {
@@ -150,10 +182,6 @@ body {
     font-size: 0.8em;
   }
 }
-.index-main .layui-main {
-  width: 100%;
-  max-width: 1200px;
-}
 .index-main .index-item-box {
   margin-top: 20px;
 }
@@ -162,17 +190,24 @@ body {
 }
 .index-main .index-item-box .index-item-list .index-item-wrap {
   width: 60%;
-  height: 80%;
+  height: 100%;
   margin: 10% auto;
   display: block;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 2px 0px #e1e1e1;
+  transition: transform 0.3s;
   padding: 20px;
 }
 .index-main .index-item-box .index-item-list .index-item-wrap:hover {
   box-shadow: 0 0 5px 2px #e1e1e1;
+  transform: translate(0, -5px);
+}
+.index-main .index-item-box .index-item-list .index-item-wrap img {
+  width: 40%;
 }
 .index-main .index-item-box .index-item-list .index-item-wrap .title {
   color: #333;
-  font-size: 2em;
+  font-size: 1.8em;
   font-weight: 700;
   margin: 15px auto;
 }
@@ -188,10 +223,67 @@ body {
   margin-top: 8px;
 }
 
-.footer {
-  background-color: #99f;
-  line-height: 50px;
-  text-align: center;
+.about-main .about-item {
+  margin: 20px auto 30px;
+}
+.about-main .about-item .title-box {
+  margin-bottom: 30px;
+}
+.about-main .about-item .title {
   font-size: 18px;
-  color: #fff;
+  line-height: 28px;
+  background-color: #fff;
+  padding-right: 10px;
+  z-index: 5;
+  float: left;
+  position: relative;
+}
+.about-main .about-item .title-line {
+  border-bottom: 1px solid #f0f0f0;
+  width: 100%;
+  float: left;
+  height: 1px;
+  display: inline-block;
+  margin-top: -14px;
+}
+.about-main .about-item .text-area {
+  color: #888;
+  line-height: 24px;
+  font-size: 14px;
+}
+.about-main .about-item .text-area .text-lg {
+  float: left;
+  color: #bd262d;
+  font-size: 50px;
+  line-height: 50px;
+  padding-top: 4px;
+  padding-right: 10px;
+  margin-top: -2px;
+}
+.about-main .about-item .text-area p {
+  margin-bottom: 15px;
+}
+
+/*搴曢儴*/
+.footer {
+  margin-top: 30px;
+  background-color: #26190e;
+  height: 60px;
+  font-size: 14px;
+}
+.footer .layui-main {
+  width: 100%;
+  max-width: 1200px;
+}
+.footer .copyright {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #999999;
+}
+.footer .copyright a {
+  color: #999999;
 }
