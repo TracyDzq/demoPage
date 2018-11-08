@@ -1,72 +1,151 @@
 <%- include('./blocks/_header.html') %>
 <div class="body-main index-main">
+  <div class="swiper-container" id="banner">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide item-fir">
+        <div
+          class="item-title ani"
+          swiper-animate-effect="fadeInDown"
+          swiper-animate-duration="0.5s"
+          swiper-animate-delay="0.3s"
+        >
+          服务遍及全球
+        </div>
+        <div
+          class="item-intro ani"
+          swiper-animate-effect="fadeInDown"
+          swiper-animate-duration="0.5s"
+          swiper-animate-delay="0.3s"
+        >
+          香港规模最大的非银行金融机构之一
+        </div>
+      </div>
+      <div class="swiper-slide item-sec">
+        <div
+          class="item-title ani"
+          swiper-animate-effect="fadeInDown"
+          swiper-animate-duration="0.5s"
+          swiper-animate-delay="0.3s"
+        >
+          助力资本服务产业
+        </div>
+        <div
+          class="item-intro ani"
+          swiper-animate-effect="fadeInDown"
+          swiper-animate-duration="0.5s"
+          swiper-animate-delay="0.3s"
+        >
+          助力中国企业走向世界
+        </div>
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+  <div class="com-info">
+    <div class="container-main">
+      <div class="title">关于民泰</div>
+      <p class="content">
+        以客户为中心、以专业为基础、以服务为根本、以价值创造为目标的企业发展理念
+      </p>
+      <p class="content">
+        致力于将自身打造为国际一流、具有卓越品牌影响力的金融机构
+      </p>
+    </div>
+  </div>
 
-    <div class="swiper-container" id='banner'>
-        <div class="swiper-wrapper">
-            <div class="swiper-slide item-fir">
-                <div class="item-title ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.5s"
-                    swiper-animate-delay="0.3s">全球一站式证券交易平台</div>
-                <div class="item-intro ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s"
-                    swiper-animate-delay="0.3s">极速同步全球行情&nbsp;&nbsp;一网打尽美股港股</div>
-            </div>
-            <div class="swiper-slide item-sec">
-                <div class="item-title ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.5s"
-                    swiper-animate-delay="0.3s">随身境外股票投资专家</div>
-                <div class="item-intro ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s"
-                    swiper-animate-delay="0.3s">移动交易 一键投资 超低佣金 安全稳定</div>
-            </div>
-        </div>
-        <div class="swiper-button-prev swiper-button-white"></div> <!-- 白色 -->
-        <div class="swiper-button-next swiper-button-white"></div> <!-- 黑色 -->
+  <div class="com-des">
+    <div class="container-main">
+      <div class="des-title">最值得信赖的财富管理专家</div>
+      <div class="des-info">
+        ONE OF THE MOST TRUSTED WEALTH MANAGEMENT EXPERTS
+      </div>
     </div>
-    <div class="layui-main">
-        <div class="layui-row index-item-box">
-            <div class="layui-col-md4 index-item-list">
-                <a href="" class="index-item-wrap">
-                    <img src="./img/index-icon1.png" alt="">
-                    <p class="title">证券交易</p>
-                    <p class="info">移动交易 一键投资</p>
-                    <p class="info"><span class="light">超低</span>佣金 安全稳定</p>
-                    <button class="layui-btn layui-btn-warm">进入下载</button>
-                </a>
-            </div>
-            <div class="layui-col-md4   index-item-list">
-                <a href="" class="index-item-wrap">
-                    <img src="./img/index-icon2.png" alt="">
-                    <p class="title">表格文件</p>
-                    <p class="info">开户表格 在线下载</p>
-                    <p class="info"><span class="light">便捷</span>填写 E-mail发送</p>
-                    <button class="layui-btn layui-btn-warm">进入下载</button>
-                </a>
-            </div>
-            <div class="layui-col-md4   index-item-list">
-                <a href="./file/1_Account_Opening_Form_Cash.pdf" target="_blank" class="index-item-wrap">
-                    <img src="./img/index-icon3.png" alt="">
-                    <p class="title">预约开户</p>
-                    <p class="info">在线预约 极速开户</p>
-                    <p class="info"><span class="light">3分钟</span> 搞定开户流程</p>
-                    <button class="layui-btn layui-btn-warm">立即申请</button>
-                </a>
-            </div>
+  </div>
+  <div class="com-info">
+    <div class="container-main title">我们的服务</div>
+    <div class="container-main service">
+      <div class="grid-container">
+        <div class="row">
+          <div class="col-3">
+            <a href="" class="wrapper">
+              <i class="iconfont icon-zhengquan"></i>
+              <div class="pro-name">证券咨询与管理</div>
+            </a>
+          </div>
+          <div class="col-3">
+            <a href="" class="wrapper">
+              <i class="iconfont icon-zichan"></i>
+              <div class="pro-name">资产管理</div>
+            </a>
+          </div>
         </div>
+      </div>
+      <div class="grid-container grid-container-spe">
+        <div class="row">
+          <div class="col-2">
+            <a href="" class="wrapper">
+              <i class="iconfont icon-caiwu"></i>
+              <div class="pro-name">财务顾问</div>
+            </a>
+          </div>
+          <div class="col-2">
+            <a href="" class="wrapper">
+              <i class="iconfont icon-anquan"></i>
+              <div class="pro-name">保险经纪</div>
+            </a>
+          </div>
+          <div class="col-2">
+            <a href="" class="wrapper">
+              <i class="iconfont icon-rengou"></i>
+              <div class="pro-name">财经公关</div>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+  <div class="com-des spe">
+    <div class="container-main">
+      <div class="des-title">联系我们</div>
+      <ul class="des-contact">
+        <li class="contact-item">
+          <i class="iconfont icon-dizhi"></i> <span class="name">地址：</span>
+          <span class="detail">香港九龙海港城港威大厦第六座20楼2002-4室</span>
+        </li>
+        <li class="contact-item">
+          <i class="iconfont icon-dianhua"></i>
+          <span class="name">电话：</span>
+          <span class="detail">+852 2235 9333</span>
+        </li>
+        <li class="contact-item">
+          <i class="iconfont icon-chuanzhen"></i>
+          <span class="name">传真：</span>
+          <span class="detail">+852 2235 9311</span>
+        </li>
+        <li class="contact-item">
+          <i class="iconfont icon-youjian"></i>
+          <span class="name">邮箱：</span>
+          <span class="detail">cs@mtfg.com.hk</span>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>
 <%- include('./blocks/_footer.html') %>
 <script>
-    var mySwiper = new Swiper('#banner', {
-        effect: 'fade',
-        autoplay: 4000,//可选选项，自动滑动
-        loop: true,
-        prevButton: '.swiper-button-prev',
-        nextButton: '.swiper-button-next',
-        onInit: function (swiper) {
-            swiperAnimateCache(swiper);
-            swiperAnimate(swiper);
-        },
-        onSlideChangeEnd: function (swiper) {
-            swiperAnimate(swiper);
-        }
-    })
-
-
+  var mySwiper = new Swiper('#banner', {
+    autoplay: 4000, //可选选项，自动滑动
+    autoplayDisableOnInteraction: false,
+    speed: 800,
+    loop: true,
+    pagination: '.swiper-pagination',
+    paginationClickable: true,
+    onInit: function(swiper) {
+      swiperAnimateCache(swiper);
+      swiperAnimate(swiper);
+    },
+    onSlideChangeEnd: function(swiper) {
+      swiperAnimate(swiper);
+    }
+  });
 </script>

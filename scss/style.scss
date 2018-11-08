@@ -1,43 +1,30 @@
-/* ===========
-	工具样式
-   =========== */
-html,
-body {
-  font-size: 100% !important;
+.bg-wrapper {
+  position: fixed;
+  z-index: -5;
+  height: 100%;
+  width: 100%;
+  background: url('../img/main-bg.jpg') no-repeat center;
+  background-size: 100% 100%;
 }
-
-.pull-right {
-  float: right !important;
-}
-.layui-btn-warm {
-  background-color: #bd262d;
-}
-.pull-left {
-  float: left !important;
-}
-.clear:after {
-  content: '';
-  clear: both;
-  display: block;
-  height: 0;
-  overflow: hidden;
-  visibility: hidden;
+.container-main {
+  margin: 0 auto;
+  max-width: 1200px;
 }
 
 .header {
   height: 80px;
   position: fixed;
+  z-index: 100;
   width: 100%;
   background-color: #fff;
   box-shadow: 0 3px 3px -3px rgba(0, 0, 0, 0.2);
   .logo {
-    margin-top: 10px;
+    margin-top: 15px;
     img {
-      height: 60px;
+      height: 50px;
     }
   }
   .header-wrapper {
-    padding: 0 20px;
     height: 100%;
   }
   .layui-main {
@@ -46,35 +33,73 @@ body {
     max-width: 1200px;
   }
   .pc-nav {
-    height: 80px;
-    .layui-nav .layui-this:after,
-    .layui-nav-bar,
-    .layui-nav-tree .layui-nav-itemed:after {
-      background-color: #bd262d;
-    }
-    .layui-nav {
-      display: inline-block;
-      background-color: #fff;
-      border-radius: 0;
-      vertical-align: middle;
-      .layui-nav-item a {
-        color: #888;
-        line-height: 80px;
-      }
-      .layui-nav-bar {
-        background-color: #bd262d;
-      }
-    }
-    .change-lan {
-      vertical-align: middle;
-
+    height: 100%;
+    margin-left: 50px;
+    .nav-item {
+      height: 76px;
+      float: left;
       line-height: 80px;
-      a {
-        color: #888;
+      margin-right: 15px;
+      cursor: pointer;
+      position: relative;
+      border-bottom: 4px solid transparent;
+      .nav-con {
+        line-height: 80px;
+        font-size: 1em;
+        display: inline-block;
+        padding: 0 20px;
+        color: #333;
       }
-      span {
-        color: #888;
+      &:hover {
+        transition: all 0.3s;
+        .nav-con {
+          color: #dab27c;
+        }
+        border-bottom: 4px solid #dab27c;
       }
+      &.active {
+        color: #dab27c;
+        .nav-con {
+          color: #dab27c;
+        }
+        border-bottom: 4px solid #dab27c;
+      }
+      &.nav-sub-item:hover {
+        .pc-sub-nav {
+          height: 96px;
+        }
+      }
+      .pc-sub-nav {
+        position: absolute;
+        background: #888;
+        text-align: center;
+        height: 0;
+        overflow: hidden;
+        width: 100%;
+        line-height: 48px;
+        transition: height 0.5s;
+        a {
+          color: #fff;
+          &:hover {
+            color: #dab27c;
+          }
+        }
+      }
+    }
+  }
+  .change-lan {
+    display: block;
+    height: 100%;
+    line-height: 80px;
+    vertical-align: middle;
+    a {
+      color: #888;
+      &:hover {
+        color: #dab27c;
+      }
+    }
+    span {
+      color: #888;
     }
   }
   .mobile-nav {
@@ -96,13 +121,6 @@ body {
 }
 .body-main {
   padding-top: 80px;
-  .layui-main {
-    width: 100%;
-    max-width: 1200px;
-    .main-wrapper {
-      padding: 0 5px;
-    }
-  }
 }
 .site-banner {
   width: 100%;
@@ -115,7 +133,7 @@ body {
     border-radius: 4px;
   }
 }
-@media only screen and (max-width: 980px) {
+@media only screen and (max-width: 800px) {
   .header {
     height: 48px;
     .logo {
@@ -153,13 +171,13 @@ body {
       width: 100% !important;
       height: 30vw !important;
     }
-    .swiper-button-white {
-      display: none;
+    .swiper-pagination-bullet {
+      background: #fff;
+      opacity: 0.4;
     }
-    &:hover {
-      .swiper-button-white {
-        display: block;
-      }
+    .swiper-pagination-bullet-active {
+      background: #e1e1e1;
+      opacity: 1;
     }
     .item-fir {
       background: url('../img/banner.jpg') center no-repeat;
@@ -182,7 +200,7 @@ body {
       color: #fff;
       font-size: 20px;
     }
-    @media only screen and (max-width: 980px) {
+    @media only screen and (max-width: 800px) {
       &.swiper-container {
         height: 50vw !important;
       }
@@ -194,44 +212,68 @@ body {
       }
     }
   }
-
-  .index-item-box {
-    margin-top: 20px;
-    .index-item-list {
-      text-align: center;
-      .index-item-wrap {
-        width: 60%;
-        height: 100%;
-        margin: 10% auto;
+  .com-info {
+    width: 100%;
+    background-color: #fff;
+    padding: 80px 0 65px;
+    text-align: center;
+    .title {
+      color: #333;
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+    .content {
+      color: #5e5e5e;
+      line-height: 24px;
+    }
+    .service {
+      .wrapper {
+        border: 1px solid #dab27c;
+        box-shadow: 0 0 2px 0px #dab27c;
+        width: 80%;
         display: block;
-        border: 1px solid #ddd;
-        box-shadow: 0 0 2px 0px #e1e1e1;
-        transition: transform 0.3s;
-        padding: 20px;
-        &:hover {
-          box-shadow: 0 0 5px 2px #e1e1e1;
-          transform: translate(0, -5px);
+        margin: 20px auto;
+        padding: 30px 5px 30px;
+        transition: all 0.5s;
+        .iconfont {
+          color: #dab27c;
+          font-size: 4.5em;
+          transition: all 0.5s;
         }
-        img {
-          width: 40%;
-        }
-        .title {
-          color: #333;
-          font-size: 1.8em;
+        .pro-name {
+          margin-top: 15px;
           font-weight: 700;
-          margin: 15px auto;
+          color: #dab27c;
+          font-size: 1.5em;
+          transition: all 0.5s;
         }
-        .info {
-          color: #999;
-          font-size: 0.9em;
-          line-height: 1.5;
-          .light {
-            color: #bd262d;
+        &:hover {
+          background-color: #dab27c;
+          .iconfont {
+            color: #fff;
+          }
+          .pro-name {
+            color: #fff;
           }
         }
-        .layui-btn {
-          margin-top: 8px;
-        }
+      }
+    }
+  }
+  .com-des {
+    background: rgba(51, 51, 51, 0.5);
+    padding: 110px 0 80px;
+    text-align: center;
+    color: #fff;
+    .des-title {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+    .des-info {
+      font-size: 1.5em;
+    }
+    &.spe {
+      .contact-item {
+        line-height: 28px;
       }
     }
   }
@@ -239,8 +281,9 @@ body {
 
 //关于我们
 .about-main {
+  background-color: #fff;
   .about-item {
-    margin: 20px auto 30px;
+    padding: 40px 0 35px;
     .title-box {
       margin-bottom: 30px;
     }
@@ -265,107 +308,17 @@ body {
       color: #888;
       line-height: 24px;
       font-size: 14px;
+      .text-para {
+        margin-bottom: 10px;
+      }
       .text-lg {
         float: left;
-        color: #bd262d;
-        font-size: 50px;
-        line-height: 50px;
+        color: #dab27c;
+        font-size: 46px;
+        line-height: 46px;
         padding-top: 4px;
         padding-right: 10px;
         margin-top: -2px;
-      }
-      .text-para {
-        margin-bottom: 15px;
-      }
-    }
-    .text-flex {
-      &.spec {
-        .flex-wrapper {
-          height: 140px;
-          width: 100%;
-          padding: 10px 0;
-          text-align: left;
-          background: #fff;
-          &.pro-spec {
-            height: 70px;
-            padding: 0;
-            .item-title {
-              color: #333;
-              font-size: 18px;
-              margin: 10px auto 5px;
-            }
-            .intro {
-              color: #666;
-              line-height: 16px;
-              margin: 0 auto 10px;
-            }
-          }
-        }
-        .left-con {
-          height: 100%;
-          width: 100px;
-          text-align: center;
-        }
-        .iconfont {
-          font-size: 60px;
-          line-height: 140px;
-          color: #666;
-        }
-      }
-      .flex-wrapper {
-        border-radius: 2px;
-        width: 75%;
-        height: 150px;
-        text-align: center;
-        margin: 0 auto;
-        padding: 20px;
-        background: #eee;
-        .item-title {
-          color: #333;
-          font-size: 18px;
-          margin: 20px auto 10px;
-        }
-        .intro {
-          color: #666;
-          font-size: 14px;
-          line-height: 30px;
-        }
-      }
-    }
-    .pro-flex {
-      .pro-wrapper {
-        width: 60%;
-        display: block;
-        background-color: #fff;
-        border: 1px solid #e0e0e0;
-        margin: 0 auto;
-        padding: 40px 20px;
-        text-align: center;
-        // color: #bd262d;
-        color: #666;
-        cursor: pointer;
-        .iconfont {
-          font-size: 80px;
-        }
-        .pro-title {
-          color: #333;
-          margin: 10px auto;
-          font-size: 18px;
-        }
-        .pro-btn {
-          color: #bd262d;
-          font-size: 12px;
-        }
-        &:hover {
-          background-color: #bd262d;
-          color: #fff;
-          .pro-title {
-            color: #fff;
-          }
-          .pro-btn {
-            color: #fff;
-          }
-        }
       }
     }
   }
@@ -373,14 +326,9 @@ body {
 
 /*底部*/
 .footer {
-  margin-top: 30px;
   background-color: #26190e;
   height: 60px;
   font-size: 14px;
-  .layui-main {
-    width: 100%;
-    max-width: 1200px;
-  }
   .copyright {
     width: 100%;
     height: 60px;

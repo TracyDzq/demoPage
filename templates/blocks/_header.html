@@ -1,64 +1,58 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>民泰证券</title>
-  <link rel="stylesheet" href="//at.alicdn.com/t/font_906290_sgqgbobvdfo.css">
-  <link rel="stylesheet" href="./layui/css/layui.css">
-  <link rel="stylesheet" href="./css/swiper.min.css">
-  <link rel="stylesheet" href="./css/animate.min.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <script src="./layui/layui.js"></script>
-  <script src="./js/swiper.min.js"></script>
-  <script src="./js/swiper.animate.min.js"></script>
-  <script src="./js/index.js"></script>
-</head>
-
-<body class="main-site">
-  <div class="layui-header header">
-    <div class="header-wrapper">
-      <div class="layui-main">
-        <a class="logo pull-left" href="/">
-          <img src="./img/logo.png" alt="layui">
-        </a>
-        <div class="pc-nav pull-right">
-          <ul class="layui-nav">
-            <li class="layui-nav-item layui-this"><a href="./index.html">首页</a></li>
-            <li class="layui-nav-item"><a href="./about.html">关于我们</a></li>
-            <li class="layui-nav-item"><a href="./product.html">产品服务</a></li>
-            <li class="layui-nav-item"><a href="./deal.html">交易平台</a></li>
-            <li class="layui-nav-item"><a href="./customer.html">客户服务</a></li>
-            <li class="layui-nav-item"><a href="./contact.html">联系我们</a></li>
-          </ul>
-          <span class="change-lan"><a href="">简</a> <span>|</span> <a href="">繁</a></span>
-
-        </div>
-        <div class="mobile-nav pull-right" id="mobile-nav">
-          <a class="mobile-menu" href="javascript:;">
-            <img src="./img/phone-icon-menu.png" alt="">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>民泰金融集团</title>
+    <link
+      rel="stylesheet"
+      href="//at.alicdn.com/t/font_906290_zmprjw85vem.css"
+    />
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/swiper.min.css" />
+    <link rel="stylesheet" href="./css/animate.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/swiper.min.js"></script>
+    <script src="./js/swiper.animate.min.js"></script>
+    <script src="./js/index.js"></script>
+  </head>
+  <body class="main-site">
+    <div class="bg-wrapper"></div>
+    <div class="header">
+      <div class="header-wrapper">
+        <div class="container-main clear">
+          <a class="logo fl" href="/">
+            <img src="./img/logo.png" alt="民泰金融" />
           </a>
+          <ul class="pc-nav fl">
+            <li class="nav-item active">
+              <a class="nav-con" href="./index.html">首页</a>
+            </li>
+            <li class="nav-item nav-sub-item">
+              <p class="nav-con">集团资料</p>
+              <ul class="pc-sub-nav">
+                <li class="sub-item"><a href="./about.html">集团介绍</a></li>
+                <li class="sub-item"><a href="./product.html">集团业务</a></li>
+              </ul>
+            </li>
+          </ul>
+          <span class="change-lan fr"
+            ><a href="">简</a> <span>|</span> <a href="">繁</a></span
+          >
+          <div class="mobile-nav fl">
+            <a class="mobile-menu" href="javascript:;">
+              <img src="./img/phone-icon-menu.png" alt="" />
+            </a>
+          </div>
         </div>
       </div>
+      <ul class="pop-nav" id="pop-nav">
+        <li class="layui-nav-item layui-this">
+          <a href="./index.html">首页</a>
+        </li>
+        <li class="layui-nav-item"><a href="./about.html">集团资料</a></li>
+      </ul>
     </div>
-    <ul class="pop-nav" id="pop-nav">
-      <li class="layui-nav-item layui-this"><a href="./index.html">首页</a></li>
-      <li class="layui-nav-item"><a href="./about.html">关于我们</a></li>
-      <li class="layui-nav-item"><a href="./product.html">产品服务</a></li>
-      <li class="layui-nav-item"><a href="./deal.html">交易平台</a></li>
-      <li class="layui-nav-item"><a href="./customer.html">客户服务</a></li>
-      <li class="layui-nav-item"><a href="./contact.html">联系我们</a></li>
-    </ul>
-  </div>
-
-  <script>
-    layui.use('element', function () {
-      var element = layui.element;
-      element.on('nav(nav1)', function (elem) {
-        console.log(elem); //得到当前点击的DOM对象
-        elem.addClass('layui-this')
-      });
-    });
-  </script>
+  </body>
+</html>
